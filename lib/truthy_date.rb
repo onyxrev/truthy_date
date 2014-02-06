@@ -9,5 +9,9 @@ module TruthyDate
     define_method("#{options[:as]}?") do
       self.send(attribute).present?
     end
+
+    define_method("#{options[:as]}") do
+      self.send("#{options[:as]}?")
+    end
   end
 end
